@@ -9,12 +9,17 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
 	name = models.CharField(max_length=100)
-
+	
+	def __unicode__(self):
+		return self.name
 
 class Tag(models.Model):
 	name = models.CharField(max_length=100)
+	
+	def __unicode__(self):
+                return self.name
 
-class post(models.Model):
+class Post(models.Model):
 	title = models.CharField(max_length=70)
 	
 	body = models.TextField()
@@ -29,3 +34,5 @@ class post(models.Model):
 
 	author = models.ForeignKey(User)
 
+	def __unicode__(self):
+                return self.title
