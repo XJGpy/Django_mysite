@@ -17,7 +17,7 @@ class Tag(models.Model):
 class post(models.Model):
 	title = models.CharField(max_length=70)
 	
-	body = models.TextFirld()
+	body = models.TextField()
 	
 	created_time = models.DateTimeField()
 	modified_time = models.DateTimeField()
