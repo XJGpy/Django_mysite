@@ -1,5 +1,6 @@
 from django import template
 from ..models import Post, Category
+from ..models import Post
 
 register = template.Library()
 
@@ -16,3 +17,5 @@ def archives():
 @register.simple_tag
 def get_categories():
     return Category.objects.all()
+    return Post.objects.all().order_by('-created_time')[:num]
+
